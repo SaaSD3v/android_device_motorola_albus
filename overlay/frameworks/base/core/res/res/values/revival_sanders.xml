@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Sanders-Revived LED behavior adapted for Moto Z2 Play (albus).
+
+     Unlike sanders, albus exposes its monochrome notification/battery LED
+     through /sys/class/leds/white and its existing android.hardware.light
+     implementation already handles NOTIFICATIONS, ATTENTION and BATTERY.
+     Do not copy sanders' charging LED sysfs path here.
+-->
+<resources>
+    <!-- Expose the existing monochrome white LED to the framework. -->
+    <bool name="config_hasNotificationLed">true</bool>
+    <bool name="config_intrusiveNotificationLed">true</bool>
+
+    <!-- Keep notification color fixed to the actual monochrome LED. -->
+    <color name="config_defaultNotificationColor">#FFFFFFFF</color>
+    <bool name="config_useDefaultNotificationLightColor">true</bool>
+</resources>
