@@ -14,8 +14,11 @@
 # limitations under the License.
 #
 
-# # Inherit from device product
+# Inherit from device product
 $(call inherit-product, device/motorola/albus/device.mk)
+
+# Sanders-Revived compatibility backports that are safe on the current stack
+$(call inherit-product, device/motorola/albus/revival_sanders.mk)
 
 # Inherit from those products - Most specific first
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
