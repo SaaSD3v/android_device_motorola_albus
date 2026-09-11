@@ -10,3 +10,9 @@
 # Kill the heaviest eligible process first under memory pressure.
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.lmk.kill_heaviest_task=true
+
+# Radio
+# Let the legacy QCRIL stack process START_NETWORK_SCAN instead of returning
+# REQUEST_NOT_SUPPORTED. This is the same behavior enabled by Sanders-Revived.
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.radio.enableadvancedscan=true
